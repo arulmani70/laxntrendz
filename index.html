@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaxNTrendz - Discover Trending Products</title>
 
-    <meta name="description" content="LaxNTrendz helps users discover trending electronics, fashion and lifestyle products with honest recommendations.">
+    <title>LaxNTrendz – Discover Trending Products</title>
+
+    <meta name="description"
+        content="LaxNTrendz helps users discover trending electronics, fashion, and lifestyle products with honest recommendations.">
 
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') no-repeat center center/cover;
             background-attachment: fixed;
-            color: white;
+            color: #fff;
         }
 
+        /* HERO */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(0, 0, 0, 0.65);
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
         }
 
-        .box {
+        .hero-box {
             padding: 40px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
         }
 
-        h1 { font-size: 48px; }
-        p { font-size: 18px; }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+        }
 
         button {
-            padding: 12px 20px;
+            margin-top: 20px;
+            padding: 12px 22px;
             border-radius: 8px;
             border: none;
             background: #ff9900;
+            font-size: 16px;
             cursor: pointer;
         }
 
+        /* SECTION */
         section {
             padding: 60px 20px;
             background: #fff;
@@ -50,6 +61,12 @@
             text-align: center;
         }
 
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        /* PRODUCTS */
         .product-list {
             display: flex;
             justify-content: center;
@@ -58,17 +75,24 @@
         }
 
         .product {
-            width: 250px;
+            width: 260px;
             background: #f7f7f7;
             padding: 15px;
             border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .product img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
+        .product h3 {
+            margin: 10px 0 5px;
+        }
+
+        /* LEGAL */
         .legal {
             max-width: 900px;
             margin: auto;
@@ -77,11 +101,18 @@
             line-height: 1.7;
         }
 
+        /* FOOTER */
         .footer {
             padding: 20px;
             background: #111;
             color: #ccc;
             text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
         }
     </style>
 </head>
@@ -90,7 +121,7 @@
 
 <!-- HERO -->
 <div class="hero">
-    <div class="box">
+    <div class="hero-box">
         <h1>LaxNTrendz</h1>
         <p>Discover trending products & honest recommendations</p>
         <button>Launching Soon 🚀</button>
@@ -100,87 +131,34 @@
 <!-- PRODUCTS -->
 <section>
     <h2>Trending Products</h2>
+
     <div class="product-list">
 
+        <!-- Earbuds -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
-            <h3>Wireless Earbuds</h3>
-            <p>Deep bass, Bluetooth 5.3</p>
+            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df" alt="Wireless Bluetooth Earbuds">
+            <h3>Wireless Bluetooth Earbuds</h3>
+            <p>Deep bass, Bluetooth 5.3 connectivity</p>
         </div>
 
+        <!-- Smart Watch -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-            <h3>Smart Watch</h3>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Fitness Watch">
+            <h3>Smart Fitness Watch</h3>
             <p>Heart rate & SpO2 tracking</p>
         </div>
 
+        <!-- Sneakers -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1528701800489-20be01b2193b">
-            <h3>Stylish Sneakers</h3>
-            <p>Comfortable daily wear</p>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Men's Casual Sneakers">
+            <h3>Men’s Casual Sneakers</h3>
+            <p>Comfortable daily wear shoes</p>
         </div>
 
     </div>
 </section>
 
-<!-- ABOUT -->
-<section>
-    <div class="legal">
-        <h2>About LaxNTrendz</h2>
-        <p>
-            LaxNTrendz is a product discovery platform that helps users explore trending electronics,
-            fashion, and lifestyle products. Our goal is to simplify purchase decisions by showcasing
-            popular and useful products in one place.
-        </p>
-    </div>
-</section>
-
-<!-- AFFILIATE DISCLOSURE -->
-<section>
-    <div class="legal">
-        <h2>Affiliate Disclosure</h2>
-        <p>
-            LaxNTrendz is a participant in the Amazon Services LLC Associates Program.
-            This means we may earn a small commission from qualifying purchases made
-            through affiliate links, at no extra cost to you.
-        </p>
-    </div>
-</section>
-
-<!-- DISCLAIMER -->
-<section>
-    <div class="legal">
-        <h2>Disclaimer</h2>
-        <p>
-            The information provided on this website is for general informational purposes only.
-            Product prices, availability, and features may change without notice.
-            We do not guarantee the accuracy of all information at all times.
-        </p>
-    </div>
-</section>
-
-<!-- PRIVACY POLICY -->
-<section>
-    <div class="legal">
-        <h2>Privacy Policy</h2>
-        <p>
-            We respect your privacy. LaxNTrendz does not collect personal data unless voluntarily
-            provided. We do not sell or share user data with third parties.
-        </p>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section>
-    <div class="legal">
-        <h2>Contact Us</h2>
-        <p>
-            For queries or collaboration requests, contact us at:<br>
-            <strong>Email:</strong> contact@laxntrendz.com
-        </p>
-    </div>
-</section>
-
+<!-- FOOTER -->
 <div class="footer">
     © 2025 LaxNTrendz | All Rights Reserved
 </div>
