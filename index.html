@@ -10,7 +10,8 @@
         content="LaxNTrendz helps users discover trending electronics, fashion, and lifestyle products with honest recommendations.">
 
     <meta name="keywords"
-        content="trending products, fitness watch, wireless earbuds, sneakers, online shopping, product discovery, best gadgets">
+        content="trending products, amazon deals, best gadgets, fashion offers, online shopping">
+
     <style>
         body {
             margin: 0;
@@ -53,6 +54,7 @@
             background: #ff9900;
             font-size: 16px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         /* SECTION */
@@ -68,47 +70,68 @@
             margin-bottom: 40px;
         }
 
-        /* PRODUCTS */
+        /* PRODUCTS GRID */
         .product-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .product {
-            width: 260px;
             background: #f7f7f7;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
         }
 
         .product img {
             width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .product h3 {
-            margin: 10px 0 5px;
+            font-size: 16px;
+            margin: 10px 0;
         }
 
-        /* LEGAL */
-        .legal {
-            max-width: 900px;
-            margin: auto;
-            text-align: left;
-            font-size: 15px;
-            line-height: 1.7;
+        .product p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 6px 0;
+        }
+
+        /* BUY BUTTON */
+        .buy-btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 10px 16px;
+            background: #ff9900;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #e68a00;
         }
 
         /* FOOTER */
         .footer {
-            padding: 20px;
+            padding: 25px;
             background: #111;
             color: #ccc;
             text-align: center;
+            font-size: 14px;
         }
 
         @media (max-width: 600px) {
@@ -125,36 +148,93 @@
 <div class="hero">
     <div class="hero-box">
         <h1>LaxNTrendz</h1>
-        <p>Discover trending products & honest recommendations</p>
-        <button>Launching Soon 🚀</button>
+        <p>Discover trending Amazon products & best deals</p>
+        <button>🔥 Live Deals</button>
     </div>
 </div>
 
 <!-- PRODUCTS -->
 <section>
-    <h2>Trending Products</h2>
+    <h2>🔥 Today’s Best Amazon Deals</h2>
 
     <div class="product-list">
 
-        <!-- Earbuds -->
+        <!-- PRODUCT 1 -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df" alt="Wireless Bluetooth Earbuds">
-            <h3>Wireless Bluetooth Earbuds</h3>
-            <p>Deep bass, Bluetooth 5.3 connectivity</p>
+            <a href="https://amzn.to/3MrKoGD" target="_blank" rel="nofollow sponsored">
+                <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=80"
+                     alt="Symbol Men's Formal Pants">
+            </a>
+
+            <h3>Symbol Men's Stretchable Formal Pants (Slim Fit)</h3>
+
+            <p>
+                Stylish slim-fit formal trousers made with stretchable fabric.
+                Ideal for office wear and daily use.
+            </p>
+
+            <p style="color:#b12704; font-weight:bold;">
+                🔥 Limited-time deal on Amazon
+            </p>
+
+            <a href="https://amzn.to/3MrKoGD"
+               target="_blank"
+               rel="nofollow sponsored"
+               class="buy-btn">
+                Check Price on Amazon
+            </a>
         </div>
 
-        <!-- Smart Watch -->
+        <!-- PRODUCT 2 -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Fitness Watch">
-            <h3>Smart Fitness Watch</h3>
-            <p>Heart rate & SpO2 tracking</p>
+            <a href="https://amzn.to/3XSsKOE" target="_blank" rel="nofollow sponsored">
+                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80"
+                     alt="Symbol Men's Polo T-Shirt">
+            </a>
+
+            <h3>Symbol Men's Cotton Rich Polo T-Shirt (Regular Fit)</h3>
+
+            <p>
+                Soft cotton-rich polo t-shirt with classic collar.
+                Perfect for casual and office wear.
+            </p>
+
+            <p style="color:#b12704; font-weight:bold;">
+                🔥 Special offer available on Amazon
+            </p>
+
+            <a href="https://amzn.to/3XSsKOE"
+               target="_blank"
+               rel="nofollow sponsored"
+               class="buy-btn">
+                Check Price on Amazon
+            </a>
         </div>
 
-        <!-- Sneakers -->
+        <!-- PRODUCT 3 -->
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Men's Casual Sneakers">
-            <h3>Men’s Casual Sneakers</h3>
-            <p>Comfortable daily wear shoes</p>
+            <a href="https://amzn.to/4iSAucZ" target="_blank" rel="nofollow sponsored">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                     alt="SWISSTONE Women's Bracelet Watch">
+            </a>
+
+            <h3>SWISSTONE DZL411 Silver Bracelet Wrist Watch for Women</h3>
+
+            <p>
+                Elegant silver bracelet watch designed for women.
+                Suitable for daily wear and special occasions.
+            </p>
+
+            <p style="color:#b12704; font-weight:bold;">
+                🔥 Great deal available on Amazon
+            </p>
+
+            <a href="https://amzn.to/4iSAucZ"
+               target="_blank"
+               rel="nofollow sponsored"
+               class="buy-btn">
+                Check Price on Amazon
+            </a>
         </div>
 
     </div>
@@ -162,7 +242,8 @@
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2025 LaxNTrendz | All Rights Reserved
+    © 2025 LaxNTrendz | All Rights Reserved <br><br>
+    <strong>Disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.
 </div>
 
 </body>
