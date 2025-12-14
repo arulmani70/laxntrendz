@@ -1,253 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LaxNTrendz – Discover Trending Products</title>
+<title>LaxNTrendz – Trending Products on Amazon</title>
 
-    <link rel="icon" type="image/png" href="images/laxntrendz.png">
+<link rel="icon" type="image/png" href="images/laxntrendz.png">
 
+<meta name="description" content="Discover trending products available on Amazon. Handpicked deals & recommendations.">
+<meta name="keywords" content="amazon affiliate, ecommerce deals, trending products">
 
-    <meta name="description"
-        content="LaxNTrendz helps users discover trending electronics, fashion, and lifestyle products with honest recommendations.">
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:'Poppins',Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
 
-    <meta name="keywords"
-        content="trending products, amazon deals, best gadgets, fashion offers, online shopping">
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    background:#fff;
+    padding:14px 30px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#ff9900;
+}
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+}
+nav a:hover{color:#ff9900}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') no-repeat center center/cover;
-            background-attachment: fixed;
-            color: #fff;
-        }
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') center/cover;
+    padding:90px 20px;
+    text-align:center;
+    color:#fff;
+}
+.hero h1{
+    font-size:46px;
+    margin-bottom:10px;
+}
+.hero p{
+    font-size:18px;
+    opacity:.95;
+}
+.hero button{
+    margin-top:25px;
+    padding:14px 26px;
+    border:none;
+    border-radius:8px;
+    background:#ff9900;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.65);
-            text-align: center;
-        }
+/* PRODUCTS SECTION */
+section{
+    padding:60px 20px;
+    background:#fff;
+}
+section h2{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:40px;
+}
 
-        .hero-box {
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
+/* PRODUCT GRID */
+.product-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+    max-width:1200px;
+    margin:auto;
+}
+.product{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:.25s;
+}
+.product:hover{
+    transform:translateY(-6px);
+}
+.product img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+.product-body{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+.product h3{
+    font-size:16px;
+    margin:0 0 8px;
+}
+.product p{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
+.note{
+    font-size:12px;
+    color:#777;
+    margin-top:8px;
+}
+.buy-btn{
+    margin-top:auto;
+    text-align:center;
+    padding:12px;
+    background:#ff9900;
+    color:#000;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+}
+.buy-btn:hover{background:#e68a00}
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+/* FOOTER */
+.footer{
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:30px 15px;
+    font-size:14px;
+}
+.footer small{opacity:.8}
 
-        p {
-            font-size: 18px;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 22px;
-            border-radius: 8px;
-            border: none;
-            background: #ff9900;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* SECTION */
-        section {
-            padding: 60px 20px;
-            background: #fff;
-            color: #000;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        /* PRODUCTS GRID */
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .product {
-            background: #f7f7f7;
-            padding: 18px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-        }
-
-        .product img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 12px;
-        }
-
-        .product h3 {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        .product p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 6px 0;
-        }
-
-        /* BUY BUTTON */
-        .buy-btn {
-            display: inline-block;
-            margin-top: auto;
-            padding: 10px 16px;
-            background: #ff9900;
-            color: #000;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        .buy-btn:hover {
-            background: #e68a00;
-        }
-
-        /* FOOTER */
-        .footer {
-            padding: 25px;
-            background: #111;
-            color: #ccc;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 34px;
-            }
-        }
-    </style>
+/* MOBILE */
+@media(max-width:600px){
+    .hero h1{font-size:32px}
+    header{padding:12px 18px}
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header>
+    <div class="logo">LaxNTrendz</div>
+    <nav>
+        <a href="#deals">Deals</a>
+        <a href="#footer">About</a>
+    </nav>
+</header>
+
 <!-- HERO -->
 <div class="hero">
-    <div class="hero-box">
-        <h1>LaxNTrendz</h1>
-        <p>Discover trending Amazon products & best deals</p>
-        <button>🔥 Live Deals</button>
-    </div>
+    <h1>Trending Products on Amazon</h1>
+    <p>Handpicked recommendations • Updated deals • Trusted picks</p>
+    <button onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">
+        🔥 Explore Deals
+    </button>
 </div>
 
 <!-- PRODUCTS -->
-<section>
-    <h2>🔥 Today’s Best Amazon Deals</h2>
+<section id="deals">
+<h2>🔥 Recommended for You</h2>
 
-    <div class="product-list">
-
-        <!-- PRODUCT 1 -->
-        <div class="product">
-            <a href="https://amzn.to/3MrKoGD" target="_blank" rel="nofollow sponsored">
-                <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=80"
-                     alt="Symbol Men's Formal Pants">
-            </a>
-
-            <h3>Symbol Men's Stretchable Formal Pants (Slim Fit)</h3>
-
-            <p>
-                Stylish slim-fit formal trousers made with stretchable fabric.
-                Ideal for office wear and daily use.
-            </p>
-
-            <p style="color:#b12704; font-weight:bold;">
-                🔥 Limited-time deal on Amazon
-            </p>
-
-            <a href="https://amzn.to/3MrKoGD"
-               target="_blank"
-               rel="nofollow sponsored"
-               class="buy-btn">
-                Check Price on Amazon
-            </a>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="product">
-            <a href="https://amzn.to/3XSsKOE" target="_blank" rel="nofollow sponsored">
-                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80"
-                     alt="Symbol Men's Polo T-Shirt">
-            </a>
-
-            <h3>Symbol Men's Cotton Rich Polo T-Shirt (Regular Fit)</h3>
-
-            <p>
-                Soft cotton-rich polo t-shirt with classic collar.
-                Perfect for casual and office wear.
-            </p>
-
-            <p style="color:#b12704; font-weight:bold;">
-                🔥 Special offer available on Amazon
-            </p>
-
-            <a href="https://amzn.to/3XSsKOE"
-               target="_blank"
-               rel="nofollow sponsored"
-               class="buy-btn">
-                Check Price on Amazon
-            </a>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="product">
-            <a href="https://amzn.to/4iSAucZ" target="_blank" rel="nofollow sponsored">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
-                     alt="SWISSTONE Women's Bracelet Watch">
-            </a>
-
-            <h3>SWISSTONE DZL411 Silver Bracelet Wrist Watch for Women</h3>
-
-            <p>
-                Elegant silver bracelet watch designed for women.
-                Suitable for daily wear and special occasions.
-            </p>
-
-            <p style="color:#b12704; font-weight:bold;">
-                🔥 Great deal available on Amazon
-            </p>
-
-            <a href="https://amzn.to/4iSAucZ"
-               target="_blank"
-               rel="nofollow sponsored"
-               class="buy-btn">
-                Check Price on Amazon
-            </a>
-        </div>
-
-    </div>
+<div class="product-list" id="productList"></div>
 </section>
 
 <!-- FOOTER -->
-<div class="footer">
-    © 2025 LaxNTrendz | All Rights Reserved <br><br>
-    <strong>Disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.
+<div class="footer" id="footer">
+    © 2025 LaxNTrendz <br><br>
+    <strong>Affiliate Disclosure:</strong><br>
+    As an Amazon Associate, I earn from qualifying purchases. <br>
+    <small>Prices & availability may change. Check Amazon for latest details.</small>
 </div>
+
+<script>
+const products=[
+{
+name:"Symbol Men's Stretchable Formal Pants (Slim Fit)",
+img:"images/spmf.jpg",
+desc:"Professional slim-fit trousers suitable for office and daily formal wear.",
+link:"https://amzn.to/3MrKoGD"
+},
+{
+name:"Symbol Men's Cotton Rich Polo T-Shirt",
+img:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80",
+desc:"Comfortable cotton-rich polo t-shirt with classic collar design.",
+link:"https://amzn.to/3XSsKOE"
+},
+{
+name:"SWISSTONE DZL411 Silver Bracelet Watch for Women",
+img:"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+desc:"Elegant bracelet style wrist watch ideal for daily wear and gifting.",
+link:"https://amzn.to/4iSAucZ"
+},
+{
+  name: "Sony 164 cm (65 inches) BRAVIA 5 4K Ultra HD Smart Mini LED Google TV (K-65XR50)",
+  img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+  desc: "Premium 65-inch Mini LED 4K Smart TV powered by Cognitive Processor XR with Google TV, Dolby Vision & Atmos support.",
+  link: "https://amzn.to/4pJ4sTE"
+},
+{
+  name: "OnePlus Bullets Wireless Z3 in-Ear Neckband Bluetooth Earphones",
+  img: "images/ets-oneplus.avif",
+  desc: "Wireless neckband earphones with 12.4mm dynamic drivers, 3D Spatial Audio, dynamic bass enhancement, 4 EQ presets, Bluetooth 5.4 and fast charging (10 mins charge gives up to 27 hrs playback).",
+  link: "https://amzn.to/48OoyEv"
+},
+{
+  name: "Amazon Basics Type-A to Micro USB Braided Cable (1.2m)",
+  img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80",
+  desc: "Durable braided micro USB cable supporting up to 3A (18W) fast charging and 480 Mbps data transfer. Tangle-free design suitable for smartphones, power banks and other Micro USB devices.",
+  link: "https://amzn.to/4aa3k6u"
+},
+{
+  name: "Amazon Basics 10-inch Ring Light",
+  img: "https://images.unsplash.com/photo-1585047721202-60032f98f19f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJpbmclMjBsaWdodHxlbnwwfHwwfHx8MA%3D%3D",
+  desc: "10-inch ring light with 3 color modes and 10 brightness settings. Compatible with all smartphones, ideal for vlogging, YouTube videos, photoshoots, and live streaming. Easy to set up and use.",
+  link: "https://amzn.to/4rS3LsF"
+},
+{
+  name: "realme NARZO 80x 5G (Sunlit Gold, 8GB+128GB)",
+  img: "images/realme-narzo-80x-5g-deep-ocean-m-S67XP3CP1.jpg",
+  desc: "Powered by Dimensity 6400 5G chipset, 6000mAh long-lasting battery with 45W fast charge. Features 120Hz eye comfort display and IP69 top-tier waterproof rating.",
+  link: "https://amzn.to/YOUR_REALME_NARZO_80X_AFFILIATE_LINK"
+}
+
+
+
+
+
+
+];
+
+const list=document.getElementById("productList");
+products.forEach(p=>{
+list.innerHTML+=`
+<div class="product">
+<a href="${p.link}" target="_blank" rel="nofollow sponsored">
+<img src="${p.img}" alt="${p.name}">
+</a>
+<div class="product-body">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<p class="note">Check price & availability on Amazon.</p>
+<a href="${p.link}" target="_blank" rel="nofollow sponsored" class="buy-btn">
+Check Price on Amazon
+</a>
+</div>
+</div>`;
+});
+</script>
 
 </body>
 </html>
